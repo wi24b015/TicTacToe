@@ -78,10 +78,8 @@ public class Main {
             return false;
         }
 
-
         public static void main(String[] args) {
-
-        Main game = new Main();
-        game.start();
-    }
+            Main game = new Main();
+            game.start();
+        }
 }
