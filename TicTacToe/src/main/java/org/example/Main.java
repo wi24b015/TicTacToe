@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Main {
     private Player player1;
     private Player player2;
-    private Player currentPlayer;
-    private Board board;
+    public Player currentPlayer;
+    public Board board;
     private Scanner scanner;
 
     public Main() {
