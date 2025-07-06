@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Main {
     private Player player1;
     private Player player2;
-    private Player currentPlayer;
-    private Board board;
+    public Player currentPlayer;
+    public Board board;
     private Scanner scanner;
 
     public Main() {
@@ -59,6 +59,14 @@ public class Main {
             start();
         }
 
+
+            // USER STORY 4: Neues Spiel starten
+            System.out.print("Play again? (y/n): ");
+            if (scanner.next().equalsIgnoreCase("y")) {
+                start();
+            }
+
+
     }
 
     private int ask(String prompt) {
@@ -69,6 +77,9 @@ public class Main {
             System.out.print(prompt);
         }
         return scanner.nextInt();
+    }
+    public void switchCurrentPlayer() {
+        currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
 
         public boolean hasWinner() {
