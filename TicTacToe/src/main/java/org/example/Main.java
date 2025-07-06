@@ -25,6 +25,7 @@ public class Main {
         while (!gameOver) {
             // USER STORY 1: Spieler wählt ein freies Feld
             System.out.println("Current Player: " + currentPlayer.getMarker());
+            board.print(); // USER STORY 2: Spielstand anzeigen
 
             int x = ask("Row (0-2): ");
             int y = ask("Column (0-2): ");
