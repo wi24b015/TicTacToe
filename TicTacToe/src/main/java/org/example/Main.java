@@ -74,6 +74,9 @@ public class Main {
         }
         return scanner.nextInt();
     }
+    public void switchCurrentPlayer() {
+        currentPlayer = (currentPlayer == player1) ? player2 : player1;
+    }
 
         public boolean hasWinner() {
             char m = currentPlayer.getMarker();
