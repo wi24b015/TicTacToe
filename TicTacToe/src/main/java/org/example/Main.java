@@ -25,7 +25,9 @@ public class Main {
         while (!gameOver) {
             // USER STORY 1: Spieler wählt ein freies Feld
             System.out.println("Current Player: " + currentPlayer.getMarker());
+
             board.print(); // USER STORY 2: Spielstand anzeigen
+
 
             int x = ask("Row (0-2): ");
             int y = ask("Column (0-2): ");
@@ -36,8 +38,24 @@ public class Main {
             }
 
             board.place(x, y, currentPlayer.getMarker());
+
+
+            // USER STORY 3: Sieg, Niederlage, Unentschieden anzeigen
+            if (hasWinner()) {
+                board.print();
+                System.out.println("Player " + currentPlayer.getMarker() + " wins!");
+                gameOver = true;
+            } else if (board.isFull()) {
+                board.print();
+                System.out.println("It's a draw!");
+                gameOver = true;
+            } else {
+                switchCurrentPlayer();
+            }
         }
+
     }
+
 
     private int ask(String prompt) {
         System.out.print(prompt);
@@ -49,8 +67,19 @@ public class Main {
         return scanner.nextInt();
     }
 
-    public static void main(String[] args) {
-        Main game = new Main();
-        game.start();
-    }
+        public boolean hasWinner() {
+            char m = currentPlayer.getMarker();
+            for (int i = 0; i < 3; i++) {
+                if (board.getCell(i, 0) == m && board.getCell(i, 1) == m && board.getCell(i, 2) == m) return true;
+                if (board.getCell(0, i) == m && board.getCell(1, i) == m && board.getCell(2, i) == m) return true;
+            }
+            if (board.getCell(0, 0) == m && board.getCell(1, 1) == m && board.getCell(2, 2) == m) return true;
+            if (board.getCell(0, 2) == m && board.getCell(1, 1) == m && board.getCell(2, 0) == m) return true;
+            return false;
+        }
+
+        public static void main(String[] args) {
+            Main game = new Main();
+            game.start();
+        }
 }
