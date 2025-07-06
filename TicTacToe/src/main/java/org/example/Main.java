@@ -26,6 +26,9 @@ public class Main {
             // USER STORY 1: Spieler wählt ein freies Feld
             System.out.println("Current Player: " + currentPlayer.getMarker());
 
+            board.print(); // USER STORY 2: Spielstand anzeigen
+
+
             int x = ask("Row (0-2): ");
             int y = ask("Column (0-2): ");
 
@@ -35,6 +38,7 @@ public class Main {
             }
 
             board.place(x, y, currentPlayer.getMarker());
+
 
             // USER STORY 3: Sieg, Niederlage, Unentschieden anzeigen
             if (hasWinner()) {
@@ -51,7 +55,7 @@ public class Main {
         }
 
     }
-    }
+
 
     private int ask(String prompt) {
         System.out.print(prompt);
@@ -76,6 +80,7 @@ public class Main {
 
 
         public static void main(String[] args) {
+
         Main game = new Main();
         game.start();
     }
