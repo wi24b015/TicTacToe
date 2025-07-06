@@ -54,6 +54,14 @@ public class Main {
             }
         }
 
+
+            // USER STORY 4: Neues Spiel starten
+            System.out.print("Play again? (y/n): ");
+            if (scanner.next().equalsIgnoreCase("y")) {
+                start();
+            }
+
+
     }
 
 
@@ -65,6 +73,9 @@ public class Main {
             System.out.print(prompt);
         }
         return scanner.nextInt();
+    }
+    public void switchCurrentPlayer() {
+        currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
 
         public boolean hasWinner() {
