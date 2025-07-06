@@ -52,6 +52,7 @@ public class Main {
             } else {
                 switchCurrentPlayer();
             }
+        }
 
 
             // USER STORY 4: Neues Spiel starten
@@ -59,7 +60,7 @@ public class Main {
             if (scanner.next().equalsIgnoreCase("y")) {
                 start();
             }
-            }
+
 
     }
 
