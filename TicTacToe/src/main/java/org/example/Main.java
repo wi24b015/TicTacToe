@@ -56,6 +56,12 @@ public class Main {
 
     }
 
+    // USER STORY 4: Neues Spiel starten
+        System.out.print("Play again? (y/n): ");
+        if (scanner.next().equalsIgnoreCase("y")) {
+        start();
+    }
+
 
     private int ask(String prompt) {
         System.out.print(prompt);
